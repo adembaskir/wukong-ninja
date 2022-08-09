@@ -94,7 +94,7 @@ public class EnemyNinjaControl : MonoBehaviour //Attached to Enemy Ninjas and th
         if(collision.gameObject.tag == "Ninja")
         {
             //enemySlapped = true;
-            audioHolderControlScript.audioHolder.PlayOneShot(audioHolderControlScript.ninjaSlap, 0.3f);
+            audioHolderControlScript.audioHolder.PlayOneShot(audioHolderControlScript.ninjaSlap, 0.8f);
         }
         if(collision.gameObject.tag == "EnemyNinja")
         {

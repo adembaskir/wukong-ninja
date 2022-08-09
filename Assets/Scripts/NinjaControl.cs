@@ -183,7 +183,7 @@ public class NinjaControl : MonoBehaviour //Attached to Ninja..
     {
         if (collision.gameObject.tag == "Trap" && !controlPointScript.shurikenPowerUp)
         {
-            audioHolderControlScript.audioHolder.PlayOneShot(audioHolderControlScript.painfullSound, 0.5f);
+            audioHolderControlScript.audioHolder.PlayOneShot(audioHolderControlScript.painfullSound, 1f);
             controlPointScript.gameLost = true;
             gameOn = false;
             RagDollModeOn();
@@ -249,7 +249,7 @@ public class NinjaControl : MonoBehaviour //Attached to Ninja..
     {
         if (other.gameObject.tag == "Trap" && !controlPointScript.shurikenPowerUp)
         {
-            audioHolderControlScript.audioHolder.PlayOneShot(audioHolderControlScript.painfullSound, 0.3f);
+            audioHolderControlScript.audioHolder.PlayOneShot(audioHolderControlScript.painfullSound, 0.8f);
             controlPointScript.gameLost = true;
             gameOn = false;
             RagDollModeOn();
@@ -258,7 +258,7 @@ public class NinjaControl : MonoBehaviour //Attached to Ninja..
         }
         if(other.gameObject.tag == "Fall Border")
         {
-            audioHolderControlScript.audioHolder.PlayOneShot(audioHolderControlScript.painfullSound, 0.3f);
+            audioHolderControlScript.audioHolder.PlayOneShot(audioHolderControlScript.painfullSound, 0.8f);
             controlPointScript.gameLost = true;
             gameOn = false;
             RagDollModeOn();
