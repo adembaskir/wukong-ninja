@@ -5,20 +5,32 @@ using UnityEngine.SceneManagement;
 
 public class AudioHolderControl : MonoBehaviour
 {
-    //public static bool musicKeeper;
+    static public bool backGroundLoopThing = true;
+    private float loopTimeCounter;
     //public GameObject backGroundMusic;
     public AudioSource audioHolder;
     public AudioClip ninjaSlap, fallingSound, backGroundMusic, painfullSound;
+    
     // Start is called before the first frame update
     void Start()
     {
-        //audioHolder.PlayOneShot(backGroundMusic, 0.1f);
+        loopTimeCounter = backGroundMusic.length-1;
+        audioHolder.PlayOneShot(backGroundMusic, 0.3f);
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (loopTimeCounter > 0)
+        {
+            loopTimeCounter -= Time.deltaTime;
+            if (loopTimeCounter <= 0)
+            {
+                audioHolder.PlayOneShot(backGroundMusic, 0.3f);
+                loopTimeCounter = backGroundMusic.length-1;
+            }
+
+        }
     }
     void Awake()
     {

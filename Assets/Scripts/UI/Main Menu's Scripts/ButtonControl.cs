@@ -4,8 +4,11 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
+
 public class ButtonControl : MonoBehaviour
 {
+    static public int levelIndex = 1;
+
     public GameObject levelPanel;
 
     public void OpenLevelPanel()
@@ -16,16 +19,23 @@ public class ButtonControl : MonoBehaviour
     {
         levelPanel.SetActive(false);
     }
+    public void PlayButton()
+    {
+        SceneManager.LoadScene(levelIndex);
+    }
     public void Level1Selected()
     {
-        SceneManager.LoadScene("GamePlay");
+        levelIndex = 1;
+        SceneManager.LoadScene("Level1");
     }
     public void Level2Selected()
     {
-
+        levelIndex = 2;
+        SceneManager.LoadScene("Level2");
     }
     public void Level3Selected()
     {
-
+        levelIndex = 3;
+        SceneManager.LoadScene("Level3");
     }
 }

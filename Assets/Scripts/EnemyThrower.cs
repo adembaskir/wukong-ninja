@@ -102,7 +102,7 @@ public class EnemyThrower : MonoBehaviour //Attached to Enemy Ninja Thrower..
             RagDollModeOn();
             Time.timeScale = time;
             StartCoroutine(waitFor());
-            Destroy(this.gameObject, 1.5f);
+            Destroy(this.gameObject, 0.5f);
         }
         if(collision.gameObject.tag == "Ninja")
         {

@@ -12,6 +12,7 @@ TagManager:
   - Shuriken Protection
   - Shuriken Power Up
   - Ground
+  - Fall Border
   layers:
   - Default
   - TransparentFX

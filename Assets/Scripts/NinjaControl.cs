@@ -255,9 +255,15 @@ public class NinjaControl : MonoBehaviour //Attached to Ninja..
             RagDollModeOn();
             Time.timeScale = slowMotionPer;
             StartCoroutine(WaitFor());
-
-
-
+        }
+        if(other.gameObject.tag == "Fall Border")
+        {
+            audioHolderControlScript.audioHolder.PlayOneShot(audioHolderControlScript.painfullSound, 0.3f);
+            controlPointScript.gameLost = true;
+            gameOn = false;
+            RagDollModeOn();
+            Time.timeScale = slowMotionPer;
+            StartCoroutine(WaitFor());
         }
         if (other.gameObject.tag == "Finish")
         {
@@ -267,6 +273,7 @@ public class NinjaControl : MonoBehaviour //Attached to Ninja..
         }
         if(other.gameObject.tag == "Shuriken Power Up")
         {
+            Destroy(other.gameObject);
             controlPointScript.shurikenPowerUp = true;
             controlPointScript.shurikenPowerUpTurns += 3;
         }
