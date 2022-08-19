@@ -890,7 +890,7 @@ GameObject:
   - component: {fileID: 4581215749409923004}
   - component: {fileID: 4581215749409923005}
   m_Layer: 0
-  m_Name: Ninja
+  m_Name: Main Ninja(Black)
   m_TagString: Ninja
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

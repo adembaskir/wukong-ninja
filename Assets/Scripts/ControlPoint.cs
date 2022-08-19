@@ -34,7 +34,7 @@ public class ControlPoint : MonoBehaviour // Attached to "Control Point" named G
     // Start is called before the first frame update
     void Start()
     {  
-        ninjaControlScript = GameObject.Find("Ninja").GetComponent<NinjaControl>();
+        ninjaControlScript = GameObject.Find("Main Ninja(Blue)").GetComponent<NinjaControl>();
         audioHolderControlScript = GameObject.Find("Audio Holder").GetComponent<AudioHolderControl>();
         ninjaControlScript.gameOn = true;
     }

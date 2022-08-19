@@ -13,7 +13,7 @@ public class ShurikenProtectionControl : MonoBehaviour //Attached to Shuriken Th
     // Start is called before the first frame update
     void Start()
     {
-        ninjaControlScript = GameObject.Find("Ninja").GetComponent<NinjaControl>();
+        ninjaControlScript = GameObject.Find("Main Ninja(Blue)").GetComponent<NinjaControl>();
         controlPointScript = GameObject.Find("Control Point").GetComponent<ControlPoint>();
     }
 
