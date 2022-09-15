@@ -15,7 +15,7 @@ public class AudioHolderControl : MonoBehaviour
     void Start()
     {
         loopTimeCounter = backGroundMusic.length-1;
-        audioHolder.PlayOneShot(backGroundMusic, 1f);
+        //audioHolder.PlayOneShot(backGroundMusic, 1f);
     }
 
     // Update is called once per frame
@@ -26,7 +26,7 @@ public class AudioHolderControl : MonoBehaviour
             loopTimeCounter -= Time.deltaTime;
             if (loopTimeCounter <= 0)
             {
-                audioHolder.PlayOneShot(backGroundMusic, 1f);
+                //audioHolder.PlayOneShot(backGroundMusic, 1f);
                 loopTimeCounter = backGroundMusic.length-1;
             }
 

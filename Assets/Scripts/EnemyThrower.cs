@@ -129,6 +129,7 @@ public class EnemyThrower : MonoBehaviour //Attached to Enemy Ninja Thrower..
         if (throwShurikenCoolDown <= 0)
         {
             GameObject go = Instantiate(KillerEnemyShuriken, throwPoint.position, throwPoint.rotation) as GameObject;
+            //GameObject goBr = Instantiate(KillerEnemyShuriken, new Vector3(0, 3, 0), throwPoint.rotation) as GameObject;
             go.GetComponent<Rigidbody>().velocity = throwPoint.transform.up * 20f;
             Destroy(go.gameObject, 1f);
             throwShurikenCoolDown = 2.97f;

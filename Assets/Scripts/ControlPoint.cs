@@ -88,31 +88,34 @@ public class ControlPoint : MonoBehaviour // Attached to "Control Point" named G
         if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Moved)
         {
 
-            // Get movement of the finger since last frame
-            Vector3 touchDeltaPosition = Input.GetTouch(0).deltaPosition;
+            if (ninjaControlScript.thisGuysAnimator.GetCurrentAnimatorStateInfo(0).IsName("Ninja_Idle_1"))
+            {
+                // Get movement of the finger since last frame
+                Vector3 touchDeltaPosition = Input.GetTouch(0).deltaPosition;
 
-            // Rotate object across XY plane
-            ninjaControlScript.ninja.transform.Rotate(0, touchDeltaPosition.x * mobileRotationSpeed, 0);
-            line.gameObject.SetActive(true);
-            line.SetPosition(0, topHead.transform.position);
-            line.SetPosition(1, topHead.transform.position + topHead.transform.forward * 4f);
-            startUpMessage.text = "";
+                // Rotate object across XY plane
+                ninjaControlScript.ninja.transform.Rotate(0, touchDeltaPosition.x * mobileRotationSpeed, 0);
+                line.gameObject.SetActive(true);
+                line.SetPosition(0, topHead.transform.position);
+                line.SetPosition(1, topHead.transform.position + topHead.transform.forward * 4f);
+                startUpMessage.text = "";
+            }
         }
         if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Ended)
         {
-            ninjaControlScript.useShoot = false;
-            ninjaControlScript.energy--;
-            ninjaControlScript.thisGuysAnimator.SetBool("isLanded", false);
-            ninjaControlScript.thisGuysAnimator.SetBool("isJumped", true);
-            ninjaControlScript.thisGuysRigidbody.velocity = topHead.transform.forward * shootPower;
-            ninjaControlScript.thisGuysRigidbody.AddForce(new Vector3(0, jumpPower, 0), ForceMode.Impulse);
+               Debug.Log("Triggered");
+               ninjaControlScript.useShoot = false;
+               ninjaControlScript.energy--;
+               ninjaControlScript.thisGuysAnimator.SetBool("isLanded", false);
+               ninjaControlScript.thisGuysAnimator.SetBool("isJumped", true);                ninjaControlScript.thisGuysRigidbody.velocity = topHead.transform.forward * shootPower;
+               ninjaControlScript.thisGuysRigidbody.AddForce(new Vector3(0, jumpPower, 0), ForceMode.Impulse);
 
 
-            line.gameObject.SetActive(false);
+               line.gameObject.SetActive(false);
 
-            if (shurikenPowerUpTurns > 0)
-                shurikenPowerUpTurns--;
-            ninjaControlScript.thisGuysRigidbody.transform.rotation = Quaternion.Euler(0f, 0f, 0f);
+               if (shurikenPowerUpTurns > 0)
+                   shurikenPowerUpTurns--;
+               ninjaControlScript.thisGuysRigidbody.transform.rotation = Quaternion.Euler(0f, 0f, 0f);
         }
     }
     public void MouseControl()

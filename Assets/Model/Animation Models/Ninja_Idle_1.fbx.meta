@@ -5,7 +5,7 @@ ModelImporter:
   internalIDToNameTable:
   - first:
       74: -203655887218126122
-    second: Ninja Idle 1
+    second: Ninja_Idle_1
   externalObjects: {}
   materials:
     materialImportMode: 2
@@ -36,7 +36,7 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Ninja Idle 1
+      name: Ninja_Idle_1
       takeName: mixamo.com
       internalID: 0
       firstFrame: 0
